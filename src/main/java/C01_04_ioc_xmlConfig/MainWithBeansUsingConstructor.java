@@ -11,7 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  *
  * @author huynq
  */
-public class MainWithBeans {
+public class MainWithBeansUsingConstructor {
 
     /**
      * @param args the command line arguments

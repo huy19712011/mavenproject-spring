@@ -12,7 +12,7 @@
     
     <!-- define the dependency -->
     
-    <bean id="myFortune"
+    <bean id="myFortuneService"
           class="C01_04_ioc_xmlConfig.HappyFortuneService">
         
     </bean>
@@ -20,7 +20,12 @@
     <bean id="myCoach"
           class="C01_04_ioc_xmlConfig.TrackCoach">
           <!--class="C01_04_ioc_xmlConfig.BaseballCoach">-->	 		
-        <constructor-arg ref="myFortune"></constructor-arg>	 		
+        <constructor-arg ref="myFortuneService"></constructor-arg>	 		
+    </bean>
+    
+    <bean id="myCricketCoach"
+          class="C01_04_ioc_xmlConfig.CricketCoach">
+        <property name="fortuneService" ref="myFortuneService" />
     </bean>
 
 
