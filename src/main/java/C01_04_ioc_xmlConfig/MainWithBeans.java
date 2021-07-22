@@ -28,6 +28,9 @@ public class MainWithBeans {
         // call method on the bean
         System.out.println(theCoach.getDailyWorkout());
 
+        // call our new method (IoC)
+        System.out.println(theCoach.getDailyFortune());
+
         // close the context
         context.close();
     }

@@ -21,6 +21,7 @@ public class Main {
 
         // use the object
         System.out.println(theCoach.getDailyWorkout());
+        //System.out.println(theCoach.getDailyFortune()); // will not work!!!
     }
 
 }

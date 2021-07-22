@@ -9,9 +9,7 @@ package C01_04_ioc_xmlConfig;
  *
  * @author huynq
  */
-public interface Coach {
+public interface FortuneService {
 
-    public String getDailyWorkout();
-
-    public String getDailyFortune();
+    public String getFortune();
 }

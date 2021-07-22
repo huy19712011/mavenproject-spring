@@ -9,9 +9,12 @@ package C01_04_ioc_xmlConfig;
  *
  * @author huynq
  */
-public interface Coach {
+public class HappyFortuneService implements FortuneService {
 
-    public String getDailyWorkout();
+    @Override
+    public String getFortune() {
 
-    public String getDailyFortune();
+        return "Today is your lucky day";
+    }
+
 }
