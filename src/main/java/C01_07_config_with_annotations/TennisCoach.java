@@ -9,6 +9,7 @@ import C01_04_ioc_xmlConfig.Coach;
 import C01_04_ioc_xmlConfig.FortuneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 /**
@@ -18,6 +19,7 @@ import org.springframework.stereotype.Component;
 //@Component("thatSillyCoach") // bean id on .xml file
 //@Component("tennisCoach") //
 @Component// default id = "tennisCoach" - the same as class name
+@Scope("prototype")
 public class TennisCoach implements Coach {
 
     /*
