@@ -20,6 +20,7 @@ import org.springframework.stereotype.Component;
 @Component// default id = "tennisCoach" - the same as class name
 public class TennisCoach implements Coach {
 
+    /*
     @Autowired
 //    @Qualifier("happyFortuneService")
     @Qualifier("randomFortuneService")
@@ -28,6 +29,7 @@ public class TennisCoach implements Coach {
     public TennisCoach() {
         System.out.println(">>> inside default constructor"); // for debug only
     }
+    */
 
     // defile setter for autowiring
     /*
@@ -38,13 +40,21 @@ public class TennisCoach implements Coach {
     }
     */
 
-
     /*
     @Autowired
     public TennisCoach(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
     */
+
+    // 73: Using @Qualifier with constructor
+    private final FortuneService fortuneService;
+
+    @Autowired
+    public TennisCoach(@Qualifier("randomFortuneService") FortuneService fortuneService) {
+        this.fortuneService = fortuneService;
+    }
+
 
     @Override
     public String getDailyWorkout() {
