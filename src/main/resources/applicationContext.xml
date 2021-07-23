@@ -7,7 +7,9 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	
+    <!--load properties file-->
+    <context:property-placeholder location="classpath:sport.properties"/>
+    
     <!-- Define your beans here -->
     
     <!-- define the dependency -->
@@ -31,8 +33,12 @@
     <bean id="myFootballCoach"
           class="C01_04_ioc_xmlConfig.FootballCoach">
         <property name="fortuneService" ref="myFortuneService" />
-        <property name="email" value="football@gmail.com" />
-        <property name="team" value="football-team" />
+        
+        <property name="email" value="${foo.email}" />
+        <property name="team" value="${foo.team}" />
+        
+<!--        <property name="email" value="football@gmail.com" />
+        <property name="team" value="football-team" />-->
         
     </bean>
 
