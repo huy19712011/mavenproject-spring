@@ -8,6 +8,7 @@ package C01_07_config_with_annotations;
 import C01_04_ioc_xmlConfig.Coach;
 import C01_04_ioc_xmlConfig.FortuneService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 /**
@@ -20,6 +21,7 @@ import org.springframework.stereotype.Component;
 public class TennisCoach implements Coach {
 
     @Autowired
+    @Qualifier("happyFortuneService")
     private FortuneService fortuneService;
 
     public TennisCoach() {
