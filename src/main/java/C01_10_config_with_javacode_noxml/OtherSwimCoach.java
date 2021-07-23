@@ -7,6 +7,7 @@ package C01_10_config_with_javacode_noxml;
 
 import C01_04_ioc_xmlConfig.Coach;
 import C01_04_ioc_xmlConfig.FortuneService;
+import org.springframework.beans.factory.annotation.Value;
 
 /**
  *
@@ -15,6 +16,12 @@ import C01_04_ioc_xmlConfig.FortuneService;
 public class OtherSwimCoach implements Coach {
 
     private FortuneService fortuneService;
+
+    @Value("${foo.email}")
+    private String email;
+
+    @Value("${foo.team}")
+    private String team;
 
     public OtherSwimCoach(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
@@ -28,6 +35,14 @@ public class OtherSwimCoach implements Coach {
     @Override
     public String getDailyFortune() {
         return fortuneService.getFortune();
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getTeam() {
+        return team;
     }
 
 }
