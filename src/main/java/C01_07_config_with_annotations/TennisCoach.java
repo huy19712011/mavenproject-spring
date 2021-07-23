@@ -7,6 +7,8 @@ package C01_07_config_with_annotations;
 
 import C01_04_ioc_xmlConfig.Coach;
 import C01_04_ioc_xmlConfig.FortuneService;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
@@ -19,7 +21,7 @@ import org.springframework.stereotype.Component;
 //@Component("thatSillyCoach") // bean id on .xml file
 //@Component("tennisCoach") //
 @Component// default id = "tennisCoach" - the same as class name
-@Scope("prototype")
+//@Scope("prototype")
 public class TennisCoach implements Coach {
 
     /*
@@ -55,6 +57,19 @@ public class TennisCoach implements Coach {
     @Autowired
     public TennisCoach(@Qualifier("randomFortuneService") FortuneService fortuneService) {
         this.fortuneService = fortuneService;
+    }
+
+    // define my init method
+    //https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api
+    @PostConstruct
+    public void doMyStartupStuff() {
+        System.out.println(">>> TennisCoach inside of doMyStartupStuff()");
+    }
+
+    // define my destroy method
+    @PreDestroy
+    public void doMyCleanupStuff() {
+        System.out.println(">>> TennisCoach inside of doMyCleanupStuff()");
     }
 
 

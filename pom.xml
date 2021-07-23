@@ -4,7 +4,7 @@
 <!--Change version of dependencies to ${springframework.version}-->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.mycompany</groupId>
@@ -29,8 +29,14 @@
             <artifactId>spring-context</artifactId>
             <version>${springframework.version}</version>
         </dependency>
-      
-      
+
+        <!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+            
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
