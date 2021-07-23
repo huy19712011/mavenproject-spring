@@ -19,6 +19,7 @@ import org.springframework.stereotype.Component;
 @Component// default id = "tennisCoach" - the same as class name
 public class TennisCoach implements Coach {
 
+    @Autowired
     private FortuneService fortuneService;
 
     public TennisCoach() {
@@ -26,11 +27,13 @@ public class TennisCoach implements Coach {
     }
 
     // defile setter for autowiring
+    /*
     @Autowired
     public void setFortuneService(FortuneService fortuneService) {
         System.out.println(">>> TennisCoach: inside setFortuneService() method"); // for debug only
         this.fortuneService = fortuneService;
     }
+    */
 
 
     /*
