@@ -28,6 +28,14 @@
         <property name="fortuneService" ref="myFortuneService" />
     </bean>
 
+    <bean id="myFootballCoach"
+          class="C01_04_ioc_xmlConfig.FootballCoach">
+        <property name="fortuneService" ref="myFortuneService" />
+        <property name="email" value="football@gmail.com" />
+        <property name="team" value="football-team" />
+        
+    </bean>
+
 
 </beans>
 
