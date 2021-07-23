@@ -11,6 +11,8 @@
     <context:component-scan
         base-package="C01_07_config_with_annotations, C01_04_ioc_xmlConfig" />
     
+    <context:property-placeholder location="classpath:sport.properties"/>
+    
     
     
 
