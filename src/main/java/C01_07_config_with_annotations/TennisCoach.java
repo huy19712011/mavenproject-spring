@@ -12,7 +12,9 @@ import org.springframework.stereotype.Component;
  *
  * @author huynq
  */
-@Component("thatSillyCoach") // bean id on .xml file
+//@Component("thatSillyCoach") // bean id on .xml file
+//@Component("tennisCoach") //
+@Component// default id = "tennisCoach" - the same as class name
 public class TennisCoach implements Coach {
 
     @Override

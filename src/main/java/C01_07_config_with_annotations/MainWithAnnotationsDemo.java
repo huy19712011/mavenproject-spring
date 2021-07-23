@@ -24,7 +24,8 @@ public class MainWithAnnotationsDemo {
                 = new ClassPathXmlApplicationContext("applicationContext_C01_07.xml");
 
         // get the bean from container (beans on .xml)
-        Coach theCoach = context.getBean("thatSillyCoach", Coach.class);
+//        Coach theCoach = context.getBean("thatSillyCoach", Coach.class);
+        Coach theCoach = context.getBean("tennisCoach", Coach.class);
 
         // call methods
         System.out.println(theCoach.getDailyWorkout());
