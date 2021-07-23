@@ -19,12 +19,26 @@ import org.springframework.stereotype.Component;
 @Component// default id = "tennisCoach" - the same as class name
 public class TennisCoach implements Coach {
 
-    private final FortuneService fortuneService;
+    private FortuneService fortuneService;
 
+    public TennisCoach() {
+        System.out.println(">>> inside default constructor"); // for debug only
+    }
+
+    // defile setter for autowiring
+    @Autowired
+    public void setFortuneService(FortuneService fortuneService) {
+        System.out.println(">>> TennisCoach: inside setFortuneService() method"); // for debug only
+        this.fortuneService = fortuneService;
+    }
+
+
+    /*
     @Autowired
     public TennisCoach(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
+    */
 
     @Override
     public String getDailyWorkout() {
