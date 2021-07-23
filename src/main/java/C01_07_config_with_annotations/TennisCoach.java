@@ -6,6 +6,8 @@
 package C01_07_config_with_annotations;
 
 import C01_04_ioc_xmlConfig.Coach;
+import C01_04_ioc_xmlConfig.FortuneService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -17,6 +19,13 @@ import org.springframework.stereotype.Component;
 @Component// default id = "tennisCoach" - the same as class name
 public class TennisCoach implements Coach {
 
+    private final FortuneService fortuneService;
+
+    @Autowired
+    public TennisCoach(FortuneService fortuneService) {
+        this.fortuneService = fortuneService;
+    }
+
     @Override
     public String getDailyWorkout() {
         return "Practice tennis 30 minutes";
@@ -24,7 +33,7 @@ public class TennisCoach implements Coach {
 
     @Override
     public String getDailyFortune() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return fortuneService.getFortune();
     }
 
 }

@@ -29,7 +29,8 @@ public class MainWithAnnotationsDemo {
 
         // call methods
         System.out.println(theCoach.getDailyWorkout());
-        //System.out.println(theCoach.getDailyFortune()); // will not work
+
+        System.out.println(theCoach.getDailyFortune());
 
         // close the context
         context.close();

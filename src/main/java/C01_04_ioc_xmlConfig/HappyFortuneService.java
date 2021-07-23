@@ -5,16 +5,19 @@
  */
 package C01_04_ioc_xmlConfig;
 
+import org.springframework.stereotype.Component;
+
 /**
  *
  * @author huynq
  */
+@Component
 public class HappyFortuneService implements FortuneService {
 
     @Override
     public String getFortune() {
 
-        return "Today is your lucky day";
+        return "Today is your lucky day!!!";
     }
 
 }
